@@ -31,19 +31,19 @@
     npm run dev
    ```
  6. masuk ke folder frontend
-    ```bash
-    cd frontend
-    ```
+   ```bash
+   cd frontend
+   ```
  7. install depedencies
-    ```bash
-    npm install
-    ```
+   ```bash
+   npm install
+   ```
  8. atur file .env
-    ```bash
-    NEXT_PUBLIC_API_URL=http://localhost:3000/api
-    ```
+   ```bash
+   NEXT_PUBLIC_API_URL=http://localhost:3000/api
+   ```
  9.  lalu jalankan server :
-    ```bash
-    npm run dev
-    ```
+   ```bash
+   npm run dev
+   ```
   
