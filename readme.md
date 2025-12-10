@@ -46,4 +46,49 @@
    ```bash
    npm run dev
    ```
+   
+Catatan untuk login menggunakan :
+```bash
+email:"triwulandari3456@gmail.com"
+password:"triwulandari3456"
+```
   
+Schema databasenya :
+
+```bash
+CREATE DATABASE test_project;
+USE test_project;
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    NAME VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    PASSWORD VARCHAR(255) NOT NULL,
+    ROLE ENUM('admin', 'staff') NOT NULL DEFAULT 'admin',
+    createdAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updatedAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    deletedAt DATETIME NULL
+);
+
+
+CREATE TABLE pegawai (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    NAME VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    phone VARCHAR(20) NOT NULL,
+    POSITION VARCHAR(100) NOT NULL,
+    photo VARCHAR(255) NOT NULL,
+
+    created_by INT NOT NULL,
+
+    createdAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updatedAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    deletedAt DATETIME NULL,
+
+    CONSTRAINT fk_pegawai_user
+        FOREIGN KEY(created_by) REFERENCES users(id)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
+);
+```
+
