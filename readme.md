@@ -7,7 +7,7 @@
     - frontend
   
  1. git clone repository terlebih dahulu :
-    - https://github.com/triwulandaribms/TriWulandari_tes_online_PTSMS
+    - https://github.com/triwulandaribms/LPI
   
  2. masuk ke folder backend
     ```bash
